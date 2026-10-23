@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Divisas</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="converter-card">
+    <div class="header">
+      <i class="fa-solid fa-coins logo-icon"></i>
+      <h2>Conversor de Divisas</h2>
+    </div>
+
+    <form id="converterForm">
+      <div class="input-group">
+        <label for="amount">Monto a convertir</label>
+        <input type="number" id="amount" value="100" min="0.01" step="any" placeholder="Ingresa el monto" required>
+      </div>
+
+      <div class="currency-row">
+        <div class="select-group">
+          <label for="fromCurrency">De:</label>
+          <div class="select-box">
+            <img id="fromFlag" src="https://flagcdn.com/w40/us.png" alt="Bandera Origen">
+            <select id="fromCurrency"></select>
+          </div>
+        </div>
+
+        <button type="button" class="swap-btn" id="swapBtn" title="Invertir divisas">
+          <i class="fa-solid fa-right-left"></i>
+        </button>
+
+        <div class="select-group">
+          <label for="toCurrency">A:</label>
+          <div class="select-box">
+            <img id="toFlag" src="https://flagcdn.com/w40/eu.png" alt="Bandera Destino">
+            <select id="toCurrency"></select>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn" id="convertBtn">
+        Convertir Divisa
+      </button>
+    </form>
+
+    <div class="result-box" id="resultBox">
+      <span class="rate-info" id="rateInfo">Calculando tasa...</span>
+      <h3 class="final-result" id="finalResult">0.00</h3>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
